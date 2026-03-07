@@ -17,7 +17,7 @@
             </div>
             <div class="flex gap-3">
                 <input id="searchInput" type="text" placeholder="Search issues..." class="border rounded-md px-3 py-1 text-sm w-60">
-                <button class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-4 py-1 rounded-md text-sm">Search</button>
+                <button  class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-4 py-1 rounded-md text-sm">Search</button>
             </div>
         </div>
     </div>
@@ -26,9 +26,9 @@
         <!-- Tabs -->
          <div class="bg-white rounded-lg shadow-sm p-4 mb-6">
             <div class="flex gap-3">
-                <button class="tab px-5 py-1 rounded bg-purple-600 text-white text-sm">All</button>
-                <button class="tab px-5 py-1 rounded bg-gray-200 text-sm">Open</button>
-                <button class="tab px-5 py-1 rounded bg-gray-200 text-sm">Closed</button>
+                <button onclick="loadIssues('all',event)" class="tab px-5 py-1 rounded bg-purple-600 text-white text-sm">All</button>
+                <button onclick="loadIssues('all',event)" class="tab px-5 py-1 rounded bg-gray-200 text-sm">Open</button>
+                <button onclick="loadIssues('all',event)" class="tab px-5 py-1 rounded bg-gray-200 text-sm">Closed</button>
             </div>
         </div>
         <!-- Issue Summary -->

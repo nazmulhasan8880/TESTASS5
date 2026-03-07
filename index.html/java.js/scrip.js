@@ -18,3 +18,37 @@ alert("Invalid Username or Password")
 }
 
 
+// LOAD ISSUES
+
+function loadIssues(type = "all", event){
+
+var spinner = document.getElementById("spinner");
+
+if(spinner){
+spinner.classList.remove("hidden");
+}
+
+var request = new XMLHttpRequest();
+
+request.open("GET", API + "/issues");
+
+request.onload = function(){
+
+var data = JSON.parse(request.responseText);
+
+var issues = data.data;
+
+
+// Filter Issues
+
+if(type === "open"){
+issues = issues.filter(function(issue){
+return issue.status === "open";
+});
+}
+
+if(type === "closed"){
+issues = issues.filter(function(issue){
+return issue.status === "closed";
+});
+}
