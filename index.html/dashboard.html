@@ -6,180 +6,66 @@
 <link rel="stylesheet" href="styles.css/styles.css">
 </head>
 
+
 <body class="bg-gray-100">
-
-<!--NAVBAR-->
-
-<div class="bg-white shadow-sm border-b">
-
-<div class="max-w-7xl mx-auto flex justify-between items-center p-4">
-
-<!-- Logo -->
-
-<div class="flex items-center gap-2">
-
-<img
-src="images/github-logo.png"
-class="w-8 h-8">
-
-<h2 class="text-lg font-semibold">
-GitHub Issues Tracker
-</h2>
-
-</div>
-
-
-<!-- Search -->
-
-<div class="flex gap-3">
-
-<input
-id="searchInput"
-type="text"
-placeholder="Search issues..."
-class="border rounded-md px-3 py-1 text-sm w-56"
->
-
-<button
-
-class="bg-gray-200 px-3 py-1 rounded text-sm">
-Search
-</button>
-
-<button
-class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-4 py-1 rounded text-sm">
-+ New Issue
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!--CONTENT-->
-
-<div class="max-w-7xl mx-auto mt-8 px-4">
-
-<!-- Tabs -->
-
-<div class="bg-white p-4 rounded-lg shadow-sm mb-6">
-
-<div class="flex gap-3">
-
-<button
-
-class="tab bg-purple-600 text-white px-5 py-1 rounded text-sm">
-All
-</button>
-
-<button
-
-class="tab bg-gray-200 px-5 py-1 rounded text-sm">
-Open
-</button>
-
-<button
-
-class="tab bg-gray-200 px-5 py-1 rounded text-sm">
-Closed
-</button>
-
-</div>
-
-</div>
-
-
-<!-- Issue Summary -->
-
-<div class="bg-white rounded-lg shadow-sm p-5 mb-6 flex justify-between items-center">
-
-<div>
-
-<h3 class="text-lg font-semibold">
-<span id="issueCount">0</span> Issues
-</h3>
-
-<p class="text-gray-500 text-sm">
-Track and manage your project issues
-</p>
-
-</div>
-
-<div class="flex gap-5 text-sm">
-
-<div class="flex items-center gap-2">
-<span class="w-3 h-3 bg-green-500 rounded-full"></span>
-Open
-</div>
-
-<div class="flex items-center gap-2">
-<span class="w-3 h-3 bg-purple-500 rounded-full"></span>
-Closed
-</div>
-
-</div>
-
-</div>
-
-
-<!-- Loading Spinner -->
-
-<div
-id="spinner"
-class="text-center text-gray-500 mb-4 hidden">
-
-Loading issues...
-
-</div>
-
-
-<!-- Issues Grid -->
-
-<div
-id="issuesContainer"
-class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pb-10">
-
-</div>
-
-</div>
-
-
-<!--MODAL-->
-
-<div
-id="modal"
-class="fixed inset-0 bg-black bg-opacity-40 hidden items-center justify-center">
-
-<div class="bg-white rounded-lg p-6 w-96">
-
-<h3
-id="modalTitle"
-class="text-lg font-semibold">
-</h3>
-
-<p
-id="modalDesc"
-class="text-gray-600 mt-2 text-sm">
-</p>
-
-<div
-id="modalInfo"
-class="mt-4 text-sm text-gray-700">
-</div>
-
-<button
-
-class="mt-5 bg-purple-600 text-white px-4 py-1 rounded">
-Close
-</button>
-
-</div>
-
-</div>
-
-<script src="java.js/scrip.js"></script>
-
-</body>
-</html>
+    <!-- NAVBAR -->
+     <div class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+            <div class="flex items-center gap-2">
+                <img src="images/github-logo.png" class="w-7">
+                <h2 class="font-semibold text-lg">GitHub Issues Tracker</h2>
+            </div>
+            <div class="flex gap-3">
+                <input id="searchInput" type="text" placeholder="Search issues..." class="border rounded-md px-3 py-1 text-sm w-60">
+                <button class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-4 py-1 rounded-md text-sm">Search</button>
+            </div>
+        </div>
+    </div>
+    <!-- CONTENT -->
+     <div class="max-w-7xl mx-auto mt-8">
+        <!-- Tabs -->
+         <div class="bg-white rounded-lg shadow-sm p-4 mb-6">
+            <div class="flex gap-3">
+                <button class="tab px-5 py-1 rounded bg-purple-600 text-white text-sm">All</button>
+                <button class="tab px-5 py-1 rounded bg-gray-200 text-sm">Open</button>
+                <button class="tab px-5 py-1 rounded bg-gray-200 text-sm">Closed</button>
+            </div>
+        </div>
+        <!-- Issue Summary -->
+         <div class="bg-white rounded-lg shadow-sm p-5 mb-6 flex justify-between items-center">
+            <div class="flex gap-1.5">
+                <img src="images/Aperture.png" class="w-10">
+                <div>
+                    <h3 class="text-lg font-semibold">
+                        <span id="issueCount">0</span> Issues</h3>
+                        <p class="text-gray-500 text-sm">Track and manage your project issues</p>
+                    </div>
+                </div>
+                <div class="flex gap-5 text-sm">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 bg-green-500 rounded-full"></span>Open
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 bg-purple-500 rounded-full"></span>Closed
+                    </div>
+                </div>
+            </div>
+            <!-- Spinner -->
+             <div id="spinner" class="text-center hidden">Loading issues...</div>
+             <!-- Issues Grid -->
+              <div id="issuesContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pb-10"></div>
+            </div>
+            <!-- MODAL -->
+             <div id="modal" class="fixed inset-0 bg-black bg-opacity-40 hidden items-center justify-center">
+                <div class="bg-white rounded-lg p-6 w-96">
+                    <h3 id="modalTitle" class="text-lg font-semibold"></h3>
+                    <p id="modalDesc" class="text-gray-600 mt-2 text-sm"></p>
+                    <div id="modalInfo" class="mt-4 text-sm text-gray-700"></div>
+                    <button class="mt-5 bg-purple-600 text-white px-4 py-1 rounded">Close</button>
+                </div>
+            </div>
+            
+            
+            <script src="java.js/scrip.js"></script>
+        </body>
+        </html>
