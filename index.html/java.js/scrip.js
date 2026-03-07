@@ -52,3 +52,49 @@ issues = issues.filter(function(issue){
 return issue.status === "closed";
 });
 }
+
+
+// Display Issues
+
+displayIssues(issues);
+
+
+// Update Count
+
+var count = document.getElementById("issueCount");
+
+if(count){
+count.innerText = issues.length;
+}
+
+
+// Hide Spinner
+
+if(spinner){
+spinner.classList.add("hidden");
+}
+
+
+// Active Tab Button
+
+if(event){
+
+var tabs = document.querySelectorAll(".tab");
+
+for(var i=0;i<tabs.length;i++){
+tabs[i].classList.remove("bg-purple-600","text-white");
+tabs[i].classList.add("bg-gray-200");
+}
+
+event.target.classList.remove("bg-gray-200");
+event.target.classList.add("bg-purple-600","text-white");
+
+}
+
+};
+
+request.send();
+
+}
+
+
